@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AI Hub - AI 产品导航与对比",
@@ -13,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <body className="min-h-screen">{children}</body>
+      <body className={`min-h-screen ${inter.className}`}>{children}</body>
     </html>
   );
 }
