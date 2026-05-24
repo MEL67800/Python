@@ -6,7 +6,12 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
   const result = createNews(body);
   return NextResponse.json({ id: result.lastInsertRowid }, { status: 201 });
 }
