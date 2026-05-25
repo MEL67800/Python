@@ -1,7 +1,5 @@
+import { HeroSection } from "@/components/home/HeroSection";
+
 export default function HomePage() {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">AI Hub</h1>
-    </main>
-  );
+  return <HeroSection />;
 }
