@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { LenisProvider } from "@/components/layout/LenisProvider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className={`min-h-screen ${inter.className} antialiased`}>
-        <Navbar />
-        <main className="pt-20">{children}</main>
-        <Footer />
+        <LenisProvider>
+          <Navbar />
+          <main className="pt-20">{children}</main>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
